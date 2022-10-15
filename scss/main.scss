@@ -1,0 +1,435 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+// LAYOUT
+
+$mobile-layout: 375px;
+$deskop-layout: 1440px;
+
+//COLORS
+
+// Primay
+$blue-color: hsl(246, 80%, 60%);
+$light-red-work-color: hsl(15, 100%, 70%);
+$soft-blue-play-color: hsl(195, 74%, 62%);
+$light-red-study-color: hsl(348, 100%, 68%);
+$lime-green-excercise-color: hsl(145, 58%, 55%);
+$violet-social-color: hsl(264, 64%, 52%);
+$soft-orange-serfcare-color: hsl(43, 84%, 65%);
+
+// Neutral
+$very-dark-color: hsl(226, 43%, 10%);
+$dark-blue-color: hsl(235, 46%, 20%);
+$desaturated-blue-color: hsl(235, 45%, 61%);
+$pale-blue-color: hsl(236, 100%, 87%);
+
+// TYPOGRAPHY
+
+//Font
+$normal-font-size: 18px;
+
+//Weight
+$light-font-weight: 300;
+$normal-font-weight: 400;
+$medium-font-weight: 500;
+
+//Font Family
+$font-family: "Rubik", sans-serif;
+
+body {
+	font-size: $normal-font-size;
+	font-family: $font-family;
+	background-color: $very-dark-color;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 800px;
+	overflow: scroll;
+}
+a,
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+.grid {
+	display: grid;
+	gap: 2rem;
+}
+.flex {
+	display: flex;
+}
+
+.container {
+	max-width: 405px;
+	margin: 1rem;
+	grid-template-rows: repeat(7, 1fr);
+	grid-template-columns: 1fr;
+	width: 100%;
+	.navigation {
+		.profile {
+			background-color: $blue-color;
+			padding: 2rem;
+			border-radius: 1rem;
+			align-items: center;
+
+			.avatar {
+				height: 70px;
+				border: 2px solid white;
+				border-radius: 100%;
+				margin-right: 1.5rem;
+			}
+			p {
+				font-size: 16px;
+				font-weight: $light-font-weight;
+				color: $pale-blue-color;
+				margin-bottom: 0.5rem;
+			}
+			h1 {
+				font-weight: $light-font-weight;
+				font-size: 1.5rem;
+			}
+		}
+
+		.nav-menu {
+			gap: 2rem;
+			justify-content: space-around;
+			padding: 2rem;
+			a {
+				color: $pale-blue-color;
+			}
+			a.active {
+				color: white;
+			}
+		}
+	}
+
+	.card {
+		background-color: $dark-blue-color;
+		border-radius: 1rem;
+	}
+
+	.report-card {
+		border-radius: 1.2rem;
+		position: relative;
+
+		.report {
+			padding: 1.5rem;
+			position: absolute;
+			top: 25%;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			.title {
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 1em;
+			}
+			.time {
+				justify-content: space-between;
+				align-items: center;
+				p {
+					font-size: 14px;
+					color: $pale-blue-color;
+				}
+
+				h3 {
+					font-size: 2.5rem;
+					font-weight: $light-font-weight;
+				}
+			}
+		}
+	}
+
+	.report-card.work {
+		background: url(../images/icon-work.svg) $light-red-work-color;
+		background-repeat: no-repeat;
+		background-position: top -10% right 5%;
+	}
+
+	.report-card.play {
+		background: url(../images/icon-play.svg) $soft-blue-play-color;
+		background-repeat: no-repeat;
+		background-position: top -10% right 5%;
+	}
+	.report-card.study {
+		background: url(../images/icon-study.svg) $light-red-study-color;
+		background-repeat: no-repeat;
+		background-position: top -10% right 5%;
+	}
+	.report-card.excercise {
+		background: url(../images/icon-exercise.svg) $lime-green-excercise-color;
+		background-repeat: no-repeat;
+		background-position: top 0% right 5%;
+	}
+	.report-card.social {
+		background: url(../images/icon-social.svg) $violet-social-color;
+		background-repeat: no-repeat;
+		background-position: top -10% right 5%;
+	}
+	.report-card.self-care {
+		background: url(../images/icon-self-care.svg) $soft-orange-serfcare-color;
+		background-repeat: no-repeat;
+		background-position: top -10% right 5%;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.container {
+		max-width: 800px;
+		margin: 1rem;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		width: 100%;
+
+		.navigation {
+			grid-column: 1 / span 2;
+			width: 100%;
+			.profile {
+				background-color: $blue-color;
+				padding: 2rem;
+				border-radius: 1rem;
+				align-items: flex-start;
+				flex-direction: row;
+
+				.avatar {
+					height: 70px;
+					border: 2px solid white;
+					border-radius: 100%;
+					margin-right: 1.5rem;
+					margin-bottom: 2rem;
+				}
+				p {
+					font-size: 16px;
+					font-weight: $light-font-weight;
+					color: $pale-blue-color;
+					margin-bottom: 0.8rem;
+				}
+				h1 {
+					font-weight: $light-font-weight;
+					font-size: 2.5rem;
+					margin-bottom: 3rem;
+				}
+			}
+
+			.nav-menu {
+				gap: 2rem;
+				justify-content: space-around;
+				padding: 2rem;
+				flex-direction: row;
+				a {
+					color: $pale-blue-color;
+				}
+				a.active {
+					color: white;
+				}
+			}
+		}
+
+		.card {
+			background-color: $dark-blue-color;
+			border-radius: 1rem;
+		}
+
+		.report-card {
+			border-radius: 1.2rem;
+			position: relative;
+			.report {
+				padding: 1.5rem;
+				position: absolute;
+				top: 20%;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				transition: 0.3s;
+				.title {
+					align-items: center;
+					justify-content: space-between;
+					margin-bottom: 2em;
+				}
+				.time {
+					justify-content: space-between;
+					align-items: flex-start;
+					flex-direction: column;
+					p {
+						font-size: 14px;
+						color: $pale-blue-color;
+					}
+
+					h3 {
+						font-size: 3.5rem;
+						margin-bottom: 1rem;
+						font-weight: $light-font-weight;
+					}
+				}
+			}
+		}
+
+		.report-card.work {
+			background: url(../images/icon-work.svg) $light-red-work-color;
+			background-repeat: no-repeat;
+			background-position: top -10% right 5%;
+		}
+
+		.report-card.work:hover .report {
+			border-bottom: 3px solid $light-red-work-color;
+		}
+
+		.report-card.play {
+			background: url(../images/icon-play.svg) $soft-blue-play-color;
+			background-repeat: no-repeat;
+			background-position: top -10% right 5%;
+		}
+		.report-card.study {
+			background: url(../images/icon-study.svg) $light-red-study-color;
+			background-repeat: no-repeat;
+			background-position: top -10% right 5%;
+		}
+		.report-card.excercise {
+			background: url(../images/icon-exercise.svg) $lime-green-excercise-color;
+			background-repeat: no-repeat;
+			background-position: top 0% right 5%;
+		}
+		.report-card.social {
+			background: url(../images/icon-social.svg) $violet-social-color;
+			background-repeat: no-repeat;
+			background-position: top -10% right 5%;
+		}
+		.report-card.self-care {
+			background: url(../images/icon-self-care.svg) $soft-orange-serfcare-color;
+			background-repeat: no-repeat;
+			background-position: top -10% right 5%;
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.container {
+		max-width: 1440px;
+		margin: 1rem;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		width: 100%;
+		.navigation {
+			grid-row: 1 / span 2;
+			grid-column: 1;
+			max-width: auto;
+			min-width: 250px;
+			.profile {
+				background-color: $blue-color;
+				padding: 2rem;
+				border-radius: 1rem;
+				align-items: flex-start;
+				flex-direction: column;
+
+				.avatar {
+					height: 70px;
+					border: 2px solid white;
+					border-radius: 100%;
+					margin-right: 1.5rem;
+					margin-bottom: 2rem;
+				}
+				p {
+					font-size: 16px;
+					font-weight: $light-font-weight;
+					color: $pale-blue-color;
+					margin-bottom: 0.8rem;
+				}
+				h1 {
+					font-weight: $light-font-weight;
+					font-size: 2.5rem;
+					margin-bottom: 3rem;
+				}
+			}
+
+			.nav-menu {
+				gap: 2rem;
+				justify-content: space-around;
+				padding: 2rem;
+				flex-direction: column;
+				a {
+					color: $pale-blue-color;
+				}
+				a.active {
+					color: white;
+				}
+			}
+		}
+
+		.card {
+			background-color: $dark-blue-color;
+			border-radius: 1rem;
+		}
+
+		.report-card {
+			border-radius: 1.2rem;
+			position: relative;
+			.report {
+				padding: 1.5rem;
+				position: absolute;
+				top: 20%;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				transition: 0.3s;
+				.title {
+					align-items: center;
+					justify-content: space-between;
+					margin-bottom: 2em;
+				}
+				.time {
+					justify-content: space-between;
+					align-items: flex-start;
+					flex-direction: column;
+					p {
+						font-size: 14px;
+						color: $pale-blue-color;
+					}
+
+					h3 {
+						font-size: 3.5rem;
+						margin-bottom: 1rem;
+						font-weight: $light-font-weight;
+					}
+				}
+			}
+		}
+
+		.report-card.work {
+			background: url(../images/icon-work.svg) $light-red-work-color;
+			background-repeat: no-repeat;
+			background-position: top -10% right 5%;
+		}
+
+		.report-card.work:hover .report {
+			border-bottom: 3px solid $light-red-work-color;
+		}
+
+		.report-card.play {
+			background: url(../images/icon-play.svg) $soft-blue-play-color;
+			background-repeat: no-repeat;
+			background-position: top -10% right 5%;
+		}
+		.report-card.study {
+			background: url(../images/icon-study.svg) $light-red-study-color;
+			background-repeat: no-repeat;
+			background-position: top -10% right 5%;
+		}
+		.report-card.excercise {
+			background: url(../images/icon-exercise.svg) $lime-green-excercise-color;
+			background-repeat: no-repeat;
+			background-position: top 0% right 5%;
+		}
+		.report-card.social {
+			background: url(../images/icon-social.svg) $violet-social-color;
+			background-repeat: no-repeat;
+			background-position: top -10% right 5%;
+		}
+		.report-card.self-care {
+			background: url(../images/icon-self-care.svg) $soft-orange-serfcare-color;
+			background-repeat: no-repeat;
+			background-position: top -10% right 5%;
+		}
+	}
+}
