@@ -12,7 +12,7 @@ $blue-color: hsl(246, 80%, 60%);
 $light-red-work-color: hsl(15, 100%, 70%);
 $soft-blue-play-color: hsl(195, 74%, 62%);
 $light-red-study-color: hsl(348, 100%, 68%);
-$lime-green-excercise-color: hsl(145, 58%, 55%);
+$lime-green-exercise-color: hsl(145, 58%, 55%);
 $violet-social-color: hsl(264, 64%, 52%);
 $soft-orange-serfcare-color: hsl(43, 84%, 65%);
 
@@ -44,7 +44,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	min-height: 800px;
-	overflow: scroll;
+	// overflow: hidden;
 }
 a,
 a:visited {
@@ -158,8 +158,8 @@ a:visited {
 		background-repeat: no-repeat;
 		background-position: top -10% right 5%;
 	}
-	.report-card.excercise {
-		background: url(../images/icon-exercise.svg) $lime-green-excercise-color;
+	.report-card.exercise {
+		background: url(../images/icon-exercise.svg) $lime-green-exercise-color;
 		background-repeat: no-repeat;
 		background-position: top 0% right 5%;
 	}
@@ -282,8 +282,8 @@ a:visited {
 			background-repeat: no-repeat;
 			background-position: top -10% right 5%;
 		}
-		.report-card.excercise {
-			background: url(../images/icon-exercise.svg) $lime-green-excercise-color;
+		.report-card.exercise {
+			background: url(../images/icon-exercise.svg) $lime-green-exercise-color;
 			background-repeat: no-repeat;
 			background-position: top 0% right 5%;
 		}
@@ -304,13 +304,13 @@ a:visited {
 	.container {
 		max-width: 1440px;
 		margin: 1rem;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: 16rem repeat(3, 1fr);
 		grid-template-rows: repeat(2, 1fr);
 		width: 100%;
 		.navigation {
 			grid-row: 1 / span 2;
 			grid-column: 1;
-			max-width: auto;
+			// max-width: 15rem;
 			min-width: 250px;
 			height: 100%;
 			.profile {
@@ -351,6 +351,7 @@ a:visited {
 				}
 				a.active {
 					color: white;
+					font-size: 1.3rem;
 				}
 
 				a:hover {
@@ -388,8 +389,9 @@ a:visited {
 					align-items: flex-start;
 					flex-direction: column;
 					p {
-						font-size: 14px;
+						font-size: 16px;
 						color: $pale-blue-color;
+						font-weight: $medium-font-weight;
 					}
 
 					h3 {
@@ -421,8 +423,8 @@ a:visited {
 			background-repeat: no-repeat;
 			background-position: top -10% right 5%;
 		}
-		.report-card.excercise {
-			background: url(../images/icon-exercise.svg) $lime-green-excercise-color;
+		.report-card.exercise {
+			background: url(../images/icon-exercise.svg) $lime-green-exercise-color;
 			background-repeat: no-repeat;
 			background-position: top 0% right 5%;
 		}
