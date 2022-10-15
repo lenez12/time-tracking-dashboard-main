@@ -220,9 +220,6 @@ a:visited {
     background-repeat: no-repeat;
     background-position: top -10% right 5%;
   }
-  .container .report-card.work:hover .report {
-    border-bottom: 3px solid hsl(15deg, 100%, 70%);
-  }
   .container .report-card.play {
     background: url(../images/icon-play.svg) hsl(195deg, 74%, 62%);
     background-repeat: no-repeat;
@@ -262,6 +259,7 @@ a:visited {
     grid-column: 1;
     max-width: auto;
     min-width: 250px;
+    height: 100%;
   }
   .container .navigation .profile {
     background-color: hsl(246deg, 80%, 60%);
@@ -296,17 +294,24 @@ a:visited {
   }
   .container .navigation .nav-menu a {
     color: hsl(236deg, 100%, 87%);
+    transition: 0.3s;
   }
   .container .navigation .nav-menu a.active {
+    color: white;
+  }
+  .container .navigation .nav-menu a:hover {
     color: white;
   }
   .container .card {
     background-color: hsl(235deg, 46%, 20%);
     border-radius: 1rem;
+    box-sizing: border-box;
   }
   .container .report-card {
     border-radius: 1.2rem;
     position: relative;
+    transition: 1s;
+    cursor: pointer;
   }
   .container .report-card .report {
     padding: 1.5rem;
@@ -315,7 +320,7 @@ a:visited {
     bottom: 0;
     left: 0;
     right: 0;
-    transition: 0.3s;
+    transition: 0.5s;
   }
   .container .report-card .report .title {
     align-items: center;
@@ -341,8 +346,8 @@ a:visited {
     background-repeat: no-repeat;
     background-position: top -10% right 5%;
   }
-  .container .report-card.work:hover .report {
-    border-bottom: 3px solid hsl(15deg, 100%, 70%);
+  .container .report-card:hover .report {
+    background-color: #323985;
   }
   .container .report-card.play {
     background: url(../images/icon-play.svg) hsl(195deg, 74%, 62%);

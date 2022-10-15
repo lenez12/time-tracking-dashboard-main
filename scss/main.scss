@@ -272,10 +272,6 @@ a:visited {
 			background-position: top -10% right 5%;
 		}
 
-		.report-card.work:hover .report {
-			border-bottom: 3px solid $light-red-work-color;
-		}
-
 		.report-card.play {
 			background: url(../images/icon-play.svg) $soft-blue-play-color;
 			background-repeat: no-repeat;
@@ -316,6 +312,7 @@ a:visited {
 			grid-column: 1;
 			max-width: auto;
 			min-width: 250px;
+			height: 100%;
 			.profile {
 				background-color: $blue-color;
 				padding: 2rem;
@@ -350,8 +347,13 @@ a:visited {
 				flex-direction: column;
 				a {
 					color: $pale-blue-color;
+					transition: 0.3s;
 				}
 				a.active {
+					color: white;
+				}
+
+				a:hover {
 					color: white;
 				}
 			}
@@ -360,11 +362,14 @@ a:visited {
 		.card {
 			background-color: $dark-blue-color;
 			border-radius: 1rem;
+			box-sizing: border-box;
 		}
 
 		.report-card {
 			border-radius: 1.2rem;
 			position: relative;
+			transition: 1s;
+			cursor: pointer;
 			.report {
 				padding: 1.5rem;
 				position: absolute;
@@ -372,7 +377,7 @@ a:visited {
 				bottom: 0;
 				left: 0;
 				right: 0;
-				transition: 0.3s;
+				transition: 0.5s;
 				.title {
 					align-items: center;
 					justify-content: space-between;
@@ -402,8 +407,8 @@ a:visited {
 			background-position: top -10% right 5%;
 		}
 
-		.report-card.work:hover .report {
-			border-bottom: 3px solid $light-red-work-color;
+		.report-card:hover .report {
+			background-color: darken($desaturated-blue-color, 25%);
 		}
 
 		.report-card.play {
